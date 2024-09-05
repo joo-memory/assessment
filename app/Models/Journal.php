@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Journal extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'store_id', 'date', 'revenue', 'food_cost', 'labor_cost', 'profit'
+    ];
+
+    
+    public function store()
+    {
+        return $this->belongsTo(Store::class);
+    }
 }
